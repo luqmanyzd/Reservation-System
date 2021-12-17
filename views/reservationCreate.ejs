@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../assets/style.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e384940095.js" crossorigin="anonymous"></script>
+    <title>Booking Form</title>
+</head>
+<body>
+    <section class = "banner">
+        <h2>BOOK YOUR TABLE NOW</h2>
+        <div class = "card-container">
+            <div class = "card-img">
+                <!-- image here -->
+            </div>
+
+            <div class = "card-content">
+                <h3>Reservation</h3>
+                
+                <form method="post" id="form" action="/createnew">
+                    <div class = "form-row">
+                        <select name = "days" required aria-invalid="">
+                            <option value = "">Select Day</option>
+                            <option value = "Sunday">Sunday</option>
+                            <option value = "Monday">Monday</option>
+                            <option value = "Tuesday">Tuesday</option>
+                            <option value = "Wednesday">Wednesday</option>
+                            <option value = "Thursday">Thursday</option>
+                            <option value = "Friday">Friday</option>
+                            <option value = "Saturday">Saturday</option>
+                        </select>
+
+                        <select name = "hours" required aria-invalid="">
+                            <option value = "">Select Hour</option>
+                            <option value = "10:00">10: 00</option>
+                            <option value = "12:00">12: 00</option>
+                            <option value = "14:00">14: 00</option>
+                            <option value = "16:00">16: 00</option>
+                            <option value = "18:00">18: 00</option>
+                            <option value = "20:00">20: 00</option>
+                        </select>
+                    </div>
+
+                    <div class = "form-row">
+                        <input type = "text" id="full_name" placeholder="Full Name" name="fullName" required>
+                        <input type = "tel" placeholder="Phone Number" name="contact" pattern="[0-9]{10}" required>
+                        
+                    </div>
+
+                    <div class = "form-row">
+                        <input type = "email" placeholder="E-mail Address" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{3}$" required>
+                        <input type = "number" placeholder="Up to 4 Persons" name="personNum" min = "1" max="4" required>
+                    </div>
+                    <div class="form-button">
+                        <input type = "submit" value = "BOOK TABLE" role="button">
+                        <input id="cancel" value="CANCEL" role="button" onclick="window.location.href='/'">
+                    </div>
+                    
+
+                </form>
+            </div>
+        </div>
+    </section>
+    
+</body>
+</html>

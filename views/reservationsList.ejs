@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link href="../assets/style.css" rel="stylesheet">
+    <title>Bookings</title>
+</head>
+<body>
+    <div class="table-container">
+        <div><a href="/" id="home-button" role="button">Home</a></div>
+        <div><a href="/createnew" id="create-button" role="button">New Booking</a></div>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Days</th>
+                    <th>Hours</th>
+                    <th>Contact</th>
+                    <th>Email</th>
+                    <th>Number of persons</th>
+                    <th>Action</th>
+                </tr>
+            <% if(booking.length > 0) { %>
+            <% booking.forEach(function(booking){ %>
+            <tr>
+                <td><%= booking.name %></td>
+                <td><%= booking.days %></td>
+                <td><%= booking.hours %></td>
+                <td><%= booking.contact %></td>
+                <td><%= booking.email %></td>
+                <td><%= booking.personNum %></td>
+                <td>
+                    <a href="/delete/<%= booking._id %>"><i style="color: black; padding: 10%;" class="fas fa-trash"></i></a>
+                </td>
+            </tr>
+            <% }) %>
+            <% } else { %>
+            <tr>
+                <td>No data found</td>
+            </tr>
+            <% } %>
+            </table>    
+    </div>
+    
+</body>
+</html>
