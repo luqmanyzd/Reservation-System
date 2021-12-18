@@ -29,7 +29,8 @@ router.post("/createnew", async (request, response) => {
         personNum: request.body.personNum
     })
     newBooking.save();
-    response.redirect("createnew")
+    response.render("reservationSuccess");
+    
 })
 
 //get all reservations made
